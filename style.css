@@ -1,0 +1,105 @@
+/* Simple colors & layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f7ff;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #1a3a5f;
+  text-align: center;
+}
+
+h2 {
+  color: #2a5a8c;
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+/* Box styling */
+.box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.side-by-side {
+  display: flex;
+  gap: 15px;
+}
+
+.side-by-side > div {
+  flex: 1;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-btn {
+  background: #4a9dff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.big-btn {
+  background: #1a5fad;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+th {
+  background: #2a5a8c;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hidden elements */
+.hidden {
+  display: none;
+}
