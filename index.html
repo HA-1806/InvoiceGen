@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Invoice Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🧾 UK Invoice Maker</h1>
+    <p>Fill this form → Get perfect UK-compliant invoice!</p>
+
+    <!-- STEP 1: Your Business -->
+    <div class="box">
+      <h2>🏢 Your Business</h2>
+      <label>Business Name*</label>
+      <input type="text" id="bizName" placeholder="Awesome Business Ltd" required>
+      
+      <label>Company Number (CRN)</label>
+      <input type="text" id="crn" placeholder="12345678">
+      
+      <label>VAT Number</label>
+      <input type="text" id="vat" placeholder="GB123456789">
+    </div>
+
+    <!-- STEP 2: Client Info -->
+    <div class="box">
+      <h2>👤 Client Details</h2>
+      <label>Client Name*</label>
+      <input type="text" id="clientName" placeholder="John Smith" required>
+      
+      <label>Client Address*</label>
+      <textarea id="clientAddress" placeholder="123 Street, London" required></textarea>
+    </div>
+
+    <!-- STEP 3: Invoice Details -->
+    <div class="box">
+      <h2>📅 Invoice Info</h2>
+      <div class="side-by-side">
+        <div>
+          <label>Invoice Number*</label>
+          <input type="text" id="invoiceNo" placeholder="INV-001" required>
+        </div>
+        <div>
+          <label>Due Date*</label>
+          <input type="date" id="dueDate" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: Items Table -->
+    <div class="box">
+      <h2>🛒 Items/Services</h2>
+      <table id="itemsTable">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Price (£)</th>
+            <th>Total (£)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows added by JavaScript -->
+        </tbody>
+      </table>
+      <button class="add-btn" onclick="addRow()">+ Add Item</button>
+    </div>
+
+    <!-- STEP 5: UK VAT Options -->
+    <div class="box">
+      <h2>🇬🇧 UK VAT Settings</h2>
+      <label>VAT Rate*</label>
+      <select id="vatRate" required>
+        <option value="0.2">Standard (20%)</option>
+        <option value="0.05">Reduced (5%)</option>
+        <option value="0">Zero (0%)</option>
+      </select>
+      
+      <label>
+        <input type="checkbox" id="reverseCharge"> Apply VAT Reverse Charge
+      </label>
+    </div>
+
+    <!-- STEP 6: Generate Button -->
+    <button class="big-btn" onclick="makeInvoice()">✨ Create Invoice</button>
+    
+    <!-- Preview Area -->
+    <div id="preview" class="hidden">
+      <h2>✅ Your UK Invoice is Ready!</h2>
+      <button class="big-btn" onclick="savePDF()">💾 Download PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
